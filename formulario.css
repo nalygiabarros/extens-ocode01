@@ -8,14 +8,14 @@
 #titulo {
     font-family: sans-serif;
     color: rgb(210, 143, 143);
-    margin-left: 5%;
+    margin-left: 10%;
 } 
 
 /* Elementos com o ID "subtitulo" */
 #subtitulo {
     font-family: sans-serif;
     color: #db7272;
-    margin-left: 8%;
+    margin-left: 10%;
 } 
 
 #check{
@@ -33,7 +33,7 @@ body{
     font-family: sans-serif;
     font-size: 1em;
     color: #ffffff;
-    margin-left: 35%;
+    margin-left: 36%;
     margin-top: 2%;
     justify-content: center;
     padding-top: 5vh;
@@ -42,17 +42,59 @@ body{
     background-position-y: auto;
 }
 
+#overlay-wallpaper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    width: 60%; /* Ajuste conforme necessário */
+    height: 60%; /* Ajuste conforme necessário */
+    background-image: url('11565077-abstrato-preto-quadrados-pequenos-pixels-padrao-de-mosaico-fundo-escuro-e-textura-vetor.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid #ffffff; /* Opcional: adiciona uma borda */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Opcional: adiciona uma sombra */
+    z-index: 1; /* Garante que fique atrás do conteúdo */
+}
+
+form, #titulo {
+    position: relative; /* Define que o texto ficará acima da imagem */
+    z-index: 2; /* Garante que fique acima do #overlay-wallpaper */
+}
+
+/* Estiliza o contêiner do grupo de checkboxes */
+#check {
+    font-size: 0.9em; /* Define um tamanho de fonte específico */
+    color: #ffffff; /* Cor do texto */
+    margin: 1em 0; /* Espaçamento superior e inferior */
+}
+
+/* Estiliza os labels dentro do contêiner #check */
+#check label {
+    font-size: 0.9em; /* Tamanho do texto para os labels */
+    margin-right: 0.2em; /* Espaçamento entre os labels */
+    display: inline-block; /* Mantém os labels em linha */
+}
+
+/* Estiliza os checkboxes dentro do contêiner #check */
+#check input[type="checkbox"] {
+    transform: scale(1.2); /* Aumenta o tamanho do checkbox */
+    margin-right: 0.1em; /* Espaçamento entre o checkbox e o label */
+}
+
 /* Elementos de tags <body>, <input>, <Select>, <textarea> e <button> */
 input, select, textarea, button {
     font-family: sans-serif;
     font-size: 1em;
     color: #e27676;
-    border-radius: 5px;
+    border-radius: 5px;    
 }
 
 /* Elementos de classe "grupo" nos estados das pseudoclasses "before" e "after" */
 .grupo:before, .grupo:after {
     display: table;
+    
 }
 
 /* Elementos de classe "grupo" no estado da pseudoclasse "after" */
@@ -62,7 +104,7 @@ input, select, textarea, button {
 
 /* Elementos de classe "campo" */
 .campo {
-    margin-bottom: 1em;
+    margin-bottom: 1em;    
 }
 
 /* Elementos de classe "campo" de tag <label> */
@@ -78,8 +120,8 @@ fieldset.grupo .campo {
     margin-right: 1em;
 }
 
-/* Elementos de classe "campo" das tags <input> com atributo text e email, da tag <select> e da tag <textarea>*/
-.campo input[type="text"], .campo input[type="email"], .campo select, .campo textarea {
+/* Elementos de classe "campo" das tags <input> com atributo text, email e senha, da tag <select> e da tag <textarea>*/
+.campo input[type="text"], .campo input[type="email"], .campo input[type="senha"] .campo select, .campo textarea {
     padding: 0.2em;
     border: 1px solid #efa3a3;
     box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
@@ -108,7 +150,7 @@ fieldset.grupo .campo {
     text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
     margin-bottom: 50px;
     margin-top: 25px;
-    margin-left: 190px;
+    margin-left: 210px;
     transform: translate(-50%, -50%)
 }
 
