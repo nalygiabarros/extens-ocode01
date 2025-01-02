@@ -11,9 +11,35 @@
 
         <!-- Título da página (aparece na aba) -->
         <title>Cadastro</title>
+
+        <style>
+            .senha-container {
+                position: relative;
+            }
+    
+            .toggle-visibility {
+                background: none;
+                border: none;
+                cursor: pointer;
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 1.2em;
+                color: #e27676;
+            }
+    
+            .campo input[type="password"] {
+                width: calc(100% - 3em);
+                padding-right: 3em;
+            }
+        </style>
+
     </head>
 
     <body>  
+
+        <!-- <script src="formulario.js"></script>
 
         <!-- Cabeçalho com título e subtítulo (ambos com css de id "titulo") -->
         <div>
@@ -40,19 +66,30 @@
                 </div>
             </fieldset> 
             
-             <fieldset class="grupo2">
+             <fieldset class="grupo">
                 <!-- Campo de email-->
                 <div class="campo">
                     <label for="email"><strong>Email</strong></label>
-                    <input  type="email" name="email" id="email" required>
+                    <input type="email" name="email" id="email" required>
                 </div>
 
                 <!-- Campo de senha-->
                 <div class="campo">
                     <label for="senha"><strong>Senha</strong></label>
-                    <input type="senha" name="senha" id="senha" required>
-                </div>            
-            </fildset>
+                    <div class="senha-container">
+                        <input type="password" name="senha" id="senha" required>
+                        <button type="button" id="toggleSenha" class="toggle-visibility"></button>
+                    </div>
+                </div>           
+            </fieldset>
+
+            <script>
+                document.getElementById('toggleSenha').addEventListener('click', function () {
+                    const senhaInput = document.getElementById('senha');
+                    const type = senhaInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                    senhaInput.setAttribute('type', type); 
+                });
+            </script>
 
             <!-- Campo de desenvolvimento web com 3 opções de botões selecionáveis (radio button) e css de classe "campo" -->
             <div class="campo">
@@ -95,7 +132,7 @@
                     <label for="tecnologia5"> Python</label>
                     <input type="checkbox" id="tecnologia6" name="tecnologia6" value="C#">
                     <label for="tecnologia6"> C#</label>
-                    <input type="checkbox" id="tecnologia6" name="tecnologia6" value="C#">
+                    <input type="checkbox" id="tecnologia6" name="tecnologia6" value="SQL">
                     <label for="tecnologia6"> SQL</label>
                     
 
@@ -105,7 +142,7 @@
             <!-- Caixa de texto -->
             <div class="campo">
                 <br>
-                <label for="experiencia"><strong>Conte um pouco mais da sua experiência: </strong></label>
+                <label for="experiencia"><strong>Conte um pouco mais da sua experiência: (opcional) </strong></label>
                 <textarea rows="6" style="width: 26em" id="experiencia" name="experiencia"></textarea>
             </div>
             

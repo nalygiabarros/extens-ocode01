@@ -117,16 +117,54 @@ input, select, textarea, button {
 /* Elementos de classe "campo" ou "grupo" de tag <fieldset> */
 fieldset.grupo .campo {
     float:  left;
-    margin-right: 1em;
+    margin-right: 1em;    
 }
 
 /* Elementos de classe "campo" das tags <input> com atributo text, email e senha, da tag <select> e da tag <textarea>*/
-.campo input[type="text"], .campo input[type="email"], .campo input[type="senha"] .campo select, .campo textarea {
+.campo input[type="text"], .campo input[type="email"], .campo input[type="password"], .campo select, .campo textarea {
     padding: 0.2em;
     border: 1px solid #efa3a3;
     box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
-    display: block;
+    display: flex; /* Define que os itens internos serão dispostos em linha */ 
 }
+
+/* Elemento da classe "toggle-visibility" responsável por fazer a senha ficar ou não visível ao digitar*/
+/* Para o contêiner da senha */
+.senha-container {
+    position: relative;
+    display: flex;
+    align-items: center; /* Alinha o ícone verticalmente */
+}
+
+.senha-container input {
+    width: 100%; /* Garante que o input ocupe todo o espaço disponível */
+    padding-right: 2.5em; /* Cria espaço para o botão no lado direito */
+}
+
+.toggle-visibility {
+    position: absolute;
+    right: 0.5em; /* Ajusta a posição à direita */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1.2em; /* Ajuste o tamanho do ícone */
+    color: #e27676;
+}
+
+.toggle-visibility:focus {
+    outline: none;
+}
+
+/* Ajuste o campo de senha para não ser afetado pelo ícone */
+.campo input[type="password"] {
+    width: 100%; /* Garante que o campo de senha ocupe toda a largura */
+    padding-right: 2.5em; /* Dá um pequeno espaço para o ícone */
+    box-sizing: border-box; /* Garante que o padding não afete o tamanho do campo */
+}
+
+/* Final do elemento da classe "toggle-visibility" responsável por fazer a senha ficar ou não visível ao digitar*/
+
 
 /* Elementos de classe "campo" de tag <select> e <option>*/
 .campo select option {
@@ -135,7 +173,7 @@ fieldset.grupo .campo {
 
 /* Elemento de classe "campo" com tag <input>, <select> e <textarea> tocas com estado da pseudoclasse "focus"*/
 .campo input:focus, .campo select:focus, .campo textarea:focus {
-    background: #E0E0F8;
+    background: #ffffff;
 }
 
 /* Elemento de classe "botao" */
@@ -156,7 +194,7 @@ fieldset.grupo .campo {
 
 /* Elemento de classe "botao" com o estado da pseudoclasse "hover" */
 .botao:hover {
-    background: #a8721c;
+    background: #e55656;
     box-shadow: inset 2px 2px 2px rgba(0,0,0,0.2);
     text-shadow: none;
 }
